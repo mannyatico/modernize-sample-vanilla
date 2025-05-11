@@ -1,0 +1,158 @@
+:root {
+    --body-bkg-color-start: #ECF8FB;
+    --body-bkg-color-end: #EFEFEF;
+    --blue: #6EB7C2;
+    --gray: #545253;
+    --green: #A0BC57;
+    --orange: #F6931D;
+    --red: #D50303;
+    --white: #FFF;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--body-bkg-color-start);
+}
+
+/* For performance reasons, instead of transition the color, let's work with the opacity to achieve the desired effect. */
+body::after {
+    animation: fadein 5s alternate infinite;
+    background-color: var(--body-bkg-color-end);
+    bottom: 0;
+    content: '';
+    position: absolute;
+    left: 0;
+    opacity: 1;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+header {
+    background: var(--gray);
+    padding: 1.375rem 0 1.3125rem;
+    text-align: center;
+}
+
+.header__main-logo {
+    margin: 0 auto;
+}
+
+main {
+    background-image:
+        linear-gradient(to bottom, #FFF 0, transparent 187px),
+        url('../images/background.png');
+    background-position: top, top left;
+    background-size: auto, auto;
+    background-repeat: no-repeat, repeat;
+    flex-grow: 1;
+    padding: 0.9375rem;
+}
+
+/* Form wrapper related styles */
+.form-wrapper {
+    background: var(--white);
+    box-shadow: 0 0.4375rem 0.875rem 0 rgba(110, 183, 194, 0.37);
+    margin-bottom: 2.1875rem;
+}
+.form-wrapper__title {
+    background: var(--gray);
+    color: var(--white);
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    padding: 0.9375rem 1.360625rem 1rem 1.484375rem;
+}
+.form-wrapper__form {
+    display: grid;
+    gap: 1.25rem;
+    padding: 0.9375rem 1.441875rem 1.375rem 1.5rem;
+}
+.form-wrapper__form__city-state-group {
+    display: grid;
+    gap: 0.71875rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 4.89625rem);
+}
+.form-wrapper__form input {
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5) inset;
+    color: #747375;
+    font-weight: 300;
+    line-height: 1.875rem;
+    outline: 0.0625rem solid #D8D8D8;
+    padding: 0.625rem 0.681875rem;
+}
+.form-wrapper__form__cta {
+    background: var(--orange);
+    border: none;
+    border-radius: 3rem;
+    color: var(--white);
+    letter-spacing: 0.053125rem;
+    line-height: 1.5rem;
+    padding: 0.875rem 2.625rem 0.625rem 2.8125rem;
+}
+
+/* more info related styles */
+.more-info {
+    border: 2px solid var(--green);
+    padding-block: 0;
+    padding-inline: 0;
+}
+.more-info__title {
+    color: var(--gray);
+    font-size: 0.9375rem;
+    line-height: 0.9375rem;
+    padding: 0 0.875rem;
+}
+.more-info__content {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: var(--gray);
+    font-size: 0.875rem;
+    font-weight: 300;
+    padding: 0.6875rem 0.8525rem 1.8125rem 0.941875rem;
+    margin: 1.0625rem 0.941875rem 0.9375rem 0.8975rem;
+}
+.more-info__content__tagline {
+    color: var(--green);
+    font-size: 0.75rem;
+}
+.more-info__content__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+.more_info__content__read-more {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+.font-semibold {
+    font-weight: 600;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.invalid-field {
+    box-shadow: none;
+    outline-color: var(--red);
+}
+
+/* animation */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
