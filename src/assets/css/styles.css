@@ -37,18 +37,24 @@ body::after {
 
 header {
     background: var(--gray);
+    height: 5rem;
     padding: 1.375rem 0 1.3125rem;
     text-align: center;
 }
 
 .header__main-logo {
+    height: 2.3125rem;
     margin: 0 auto;
 }
 
 main {
     background-image:
         linear-gradient(to bottom, #FFF 0, transparent 187px),
-        url('../images/background.png');
+        image-set(
+            url('../images/background.png') 1x,
+            url('../images/background@2x.png') 2x,
+            url('../images/background@3x.png') 3x
+        );
     background-position: top, top left;
     background-size: auto, auto;
     background-repeat: no-repeat, repeat;
@@ -145,6 +151,58 @@ main {
 .invalid-field {
     box-shadow: none;
     outline-color: var(--red);
+}
+
+/* Media breakpoints */
+@media only screen and (min-width: 768px) {
+    main {
+        padding-top: 2.0625rem;
+    }
+    /* Form */
+    .form-wrapper {
+        margin: 0 auto 2.0625rem auto;
+        width: 41.875rem;
+    }
+    .form-wrapper__title {
+        padding: 0.9375rem 4.8125rem 1.0625rem 4.75rem;
+    }
+    .form-wrapper__form {
+        padding: 1.8125rem 3.375rem 1.6875rem 3.4375rem;
+    }
+    .form-wrapper__form input {
+        padding-left: 1.574375rem;
+        padding-right: 1.574375rem;
+    }
+    .form-wrapper__form__city-state-group {
+        gap: 1.66rem;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 11.306875rem);
+    }
+    .form-wrapper__form__cta {
+        margin: auto;
+        width: 20.850625rem;
+    }
+
+    /* More info */
+    .more-info {
+        margin: 0 auto;
+        width: 25.25rem;
+    }
+    .more-info__title {
+        padding: 0 3.3125rem;
+    }
+    .more-info__content {
+        line-height: 1.125rem;
+        margin-left: 1.25rem;
+        margin-right: 1.3125rem;
+        padding-left: 1.3125rem;
+        padding-right: 1.1875rem;
+    }
+    .more-info__content__tagline {
+        line-height: 0.9375rem;
+    }
+    .more-info__content__title {
+        line-height: 1.5rem;
+    }
 }
 
 /* animation */

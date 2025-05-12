@@ -1,0 +1,17 @@
+{
+  "name": "modernize_vanilla",
+  "module": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun ./src/index.html",
+    "build": "rm -rf ./build && bun build ./src/index.html --outdir ./build --minify",
+    "serve": "npm run build && npx http-server ./build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
