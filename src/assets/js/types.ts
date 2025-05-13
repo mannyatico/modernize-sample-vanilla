@@ -1,0 +1,1 @@
+export type AllowedValidityKeys = 'valueMissing' | 'typeMismatch' | 'patternMismatch' | 'tooShort';

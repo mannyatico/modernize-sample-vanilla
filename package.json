@@ -1,6 +1,6 @@
 {
   "name": "modernize_vanilla",
-  "module": "index.js",
+  "module": "index.ts",
   "type": "module",
   "private": true,
   "scripts": {

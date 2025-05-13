@@ -94,15 +94,41 @@ main {
     line-height: 1.875rem;
     outline: 0.0625rem solid #D8D8D8;
     padding: 0.625rem 0.681875rem;
+    width: 100%;
 }
 .form-wrapper__form__cta {
+    align-items: center;
     background: var(--orange);
     border: none;
     border-radius: 3rem;
     color: var(--white);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
     letter-spacing: 0.053125rem;
     line-height: 1.5rem;
     padding: 0.875rem 2.625rem 0.625rem 2.8125rem;
+    position: relative;
+}
+.form-wrapper__form__cta.loading:before {
+    background-image: url('../images/loader.svg');
+    background-size: 1.5rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    content: '';
+    display: inline-block;
+    margin-right: 0.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.form-wrapper__form__cta:active {
+    position: relative;
+    top: 1px;
+}
+.form-wrapper__form__cta:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+    position: static;
 }
 
 /* more info related styles */
@@ -148,7 +174,12 @@ main {
 .uppercase {
     text-transform: uppercase;
 }
-.invalid-field {
+.invalid-field:after {
+    color: var(--red);
+    content: attr(data-error-message);
+    font-size: 0.75rem;
+}
+.invalid-field input{
     box-shadow: none;
     outline-color: var(--red);
 }
