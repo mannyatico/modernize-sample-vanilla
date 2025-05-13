@@ -25,11 +25,11 @@ The whole project took around 6 hours, working during the weekend and some final
 
 ### The trickiest part
 
-Validate the form using all the built-in validators was tricky, instead of adding custom properties to the inputs, I went with using the built-in ones and using javascript to verify and show the feedback to the users when needed.
+Validating the form using all the built-in validators was tricky, instead of adding custom properties to the inputs, I went with using the built-in ones and using javascript to verify and show the feedback to the users when needed.
 
 ### What took the longest?
 
-The phone masking required me to think on a way to achieve that, and while testing it, found that also I needed to add support to edition in the middle of the field without loosing the cursor position, so, it extended the time to complete the functionality the way I wanted.
+The phone masking required me to think on a way to achieve that, and while testing it, found that I also needed to add support to edition in the middle of the field without losing the cursor position, so it extended the time to complete the functionality the way I wanted.
 
 ## Trivia
 
@@ -38,3 +38,4 @@ The phone masking required me to think on a way to achieve that, and while testi
 * All form validations work with the built-in validators, meaning, no need for extra markup, if we want a required field, we use `required` property and so on.
 * Form submission and validation also works with form properties, it uses the method and action set in the form to do the ajax request.
 * Form validation works on blur for inputs, and also when trying to submit the form.
+* Added a small animation to let the user know when the form is being submitted, and added a small tweak to also let the user know that th button is inactive once the form is submitted.
